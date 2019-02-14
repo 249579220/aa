@@ -1,14 +1,13 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div>
+    <h2>后台首页面</h2>
   </div>
 </template>
-
 <script>
 export default {
-  name: 'App'
+  
 }
 </script>
-
-<style>
+<style lang="less">
+ 
 </style>
