@@ -43,11 +43,11 @@ export default {
         // 设定具体规则
         username: [
           // required:必须填写  message:检验错误提示信息，trigger:校验触发器
-          { required: true, message: '请输入用户名称', trigger: 'blur' }
+          { required: true, message: "请输入用户名称", trigger: "blur" }
         ],
-        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+        password: [{ required: true, message: "请输入密码", trigger: "blur" }]
       }
-    }
+    };
   },
   methods: {
     // 用户登录系统
@@ -57,26 +57,26 @@ export default {
         // console.log(valid)  valid:true/false 校验成功或失败
         if (valid === true) {
           // 利用axios，把用户信息提交到api进行真实性校验
-          const { data: res } = await this.$http.post('login', this.loginForm)
+          const { data: res } = await this.$http.post("login", this.loginForm);
           if (res.meta.status !== 200) {
-            return this.$message.error('用户名或密码不存在')
+            return this.$message.error("用户名或密码不存在");
           }
 
           // 通过sessionStorage记录token
           // window.sessionStorage(名称，值)
-          window.sessionStorage.setItem('token', res.data.token)
+          window.sessionStorage.setItem("token", res.data.token);
 
           // 进行路由跳转(重定向)，具体跳转到(/home)
-          this.$router.push('/home')
+          this.$router.push("/home");
         }
-      })
+      });
     },
     // 重置form表单
     resetForm() {
-      this.$refs.loginFormRef.resetFields()
+      this.$refs.loginFormRef.resetFields();
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
