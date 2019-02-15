@@ -19,7 +19,7 @@
 
         <el-row>
           <el-col :offset="15">
-            <el-button type="primary" @click="login">登录</el-button>
+            <el-button type="primary" @click="login">请登录</el-button>
             <el-button type="info" @click="resetForm">重置</el-button>
           </el-col>
         </el-row>
